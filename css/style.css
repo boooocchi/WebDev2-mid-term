@@ -65,6 +65,15 @@ header .burger-menu {
   color: rgb(30, 30, 30);
 }
 
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu .direction-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
