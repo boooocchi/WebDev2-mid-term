@@ -1,0 +1,30 @@
+@use "variable" as var;
+
+header {
+  width: 96%;
+
+  margin: 0.7rem auto 0;
+  height: 15vh;
+  min-height: 30px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .cart,
+  .account {
+    height: 1.2rem;
+  }
+  .cart {
+    margin-left: 1rem;
+  }
+  .burger-menu {
+    height: 2.5rem;
+    width: 2.5rem;
+    width: auto;
+    color: var.$orangered;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+  }
+}

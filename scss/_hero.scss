@@ -1,0 +1,47 @@
+@use "variable" as var;
+
+.hero {
+  height: 85vh;
+  .wrapper {
+    img {
+      position: relative;
+      height: 420px;
+      width: auto;
+      z-index: 1;
+    }
+    span {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+
+      font-size: 5rem;
+      z-index: 0;
+      @include var.bigshol;
+      opacity: 0.3;
+      font-weight: 900;
+      color: var.$orangered;
+    }
+    .hero-btns {
+      .order {
+        background-color: var.$orangered;
+        border: none;
+        border-radius: 2rem;
+        font-size: 0.8rem;
+        padding: 15px 30px;
+        @include var.helve;
+        letter-spacing: 0.1px;
+        a {
+          color: white;
+        }
+      }
+      .view {
+        @extend .order;
+        background-color: transparent;
+        border: var.$orangered 2px solid;
+        a {
+          color: var.$darkgrey;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "sass": "^1.58.0",
+    "scss": "^0.2.4"
+  },
+  "name": "webdev2-midterm-project",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "sass scss:css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

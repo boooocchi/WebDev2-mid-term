@@ -1,0 +1,43 @@
+// colors
+
+$lightorange: #fff4f3;
+$orangered: #fb422e;
+$starwellow: #ffe253;
+$darkgrey: rgb(30, 30, 30);
+
+//font
+@mixin bigshol {
+  font-family: "Big Shoulders Inline Text";
+}
+@mixin helve {
+  font-family: "Helvetica";
+}
+
+//general
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-container {
+  margin: 0 auto;
+}
+
+//responsive
+@mixin for-phone-only {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: 769px) {
+    @content;
+  }
+}

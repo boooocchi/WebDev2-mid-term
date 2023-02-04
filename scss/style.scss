@@ -1,0 +1,19 @@
+@use "variable" as var;
+@use "cta";
+@use "features";
+@use "header";
+@use "hero";
+@use "menu";
+@use "special-deal";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: var.$lightorange;
+}
