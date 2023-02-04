@@ -16,4 +16,11 @@
 
 body {
   background-color: var.$lightorange;
+  @include var.helve;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
 }

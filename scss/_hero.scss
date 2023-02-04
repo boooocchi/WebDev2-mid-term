@@ -1,12 +1,12 @@
 @use "variable" as var;
 
 .hero {
-  height: 85vh;
   .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 5rem;
+    gap: 4rem;
     img {
       position: relative;
       height: 420px;
@@ -30,7 +30,7 @@
     .hero-btns {
       display: flex;
       @include var.center;
-      gap: 1.5rem;
+      gap: 2rem;
       .order {
         background-color: var.$orangered;
         border: none;
