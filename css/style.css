@@ -28,6 +28,12 @@ header .burger-menu {
 .hero {
   height: 85vh;
 }
+.hero .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
 .hero .wrapper img {
   position: relative;
   height: 420px;
@@ -38,12 +44,21 @@ header .burger-menu {
   display: inline-block;
   position: absolute;
   left: 50%;
-  font-size: 5rem;
+  top: 5rem;
+  transform: translate(-50%, 0);
+  font-size: 9rem;
   z-index: 0;
   font-family: "Big Shoulders Inline Text";
   opacity: 0.3;
   font-weight: 900;
   color: #fb422e;
+  letter-spacing: 1rem;
+}
+.hero .wrapper .hero-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 .hero .wrapper .hero-btns .order, .hero .wrapper .hero-btns .view {
   background-color: #fb422e;
