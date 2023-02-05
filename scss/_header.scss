@@ -1,12 +1,14 @@
 @use "variable" as var;
 
 header {
-  width: 96%;
+  width: 100%;
+  position: sticky;
+  z-index: 3;
+  padding: 0 25px;
+  margin: 0 auto;
 
-  margin: 0.7rem auto 0;
-  height: 15vh;
-  min-height: 30px;
-  max-height: 40px;
+  height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,6 +16,7 @@ header {
   .cart,
   .account {
     height: 1.2rem;
+    cursor: pointer;
   }
   .cart {
     margin-left: 1rem;
@@ -22,9 +25,83 @@ header {
     height: 2.5rem;
     width: 2.5rem;
     width: auto;
+
     color: var.$orangered;
     background-color: white;
     border-radius: 50%;
     padding: 10px;
+  }
+  .fukidashi {
+    transform: translate(300%, 0);
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 15px solid rgba(255, 255, 255, 0.888);
+    right: 27px;
+    top: 33px;
+    visibility: hidden;
+    transition: transform 0.3s;
+  }
+  .viewFukidashi {
+    transform: translate(0, 0);
+    visibility: visible;
+    z-index: 3;
+  }
+  .inside-cart {
+    transform: translate(21rem, 30rem);
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    width: 20rem;
+    height: 30rem;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.591);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1.5rem 1rem;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.212);
+    overflow: scroll;
+    scrollbar-width: none;
+
+    p {
+      &:nth-child(1) {
+        @include var.bigshol;
+        font-size: 2rem;
+      }
+      &:nth-child(2) {
+        margin-top: auto;
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.399);
+      }
+    }
+    button {
+      margin-top: auto;
+      background-color: var.$orangered;
+      border: none;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      padding: 15px 30px;
+      @include var.helve;
+      letter-spacing: 0.1px;
+      color: white;
+    }
+    .clearAll {
+      display: block;
+      text-align: right;
+      margin-left: auto;
+      color: rgb(113, 113, 113);
+      font-size: 0.9rem;
+    }
+  }
+  .viewCart {
+    transform: translate(0, 30rem);
+    visibility: visible;
+    z-index: 2;
   }
 }

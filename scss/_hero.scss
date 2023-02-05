@@ -1,23 +1,28 @@
 @use "variable" as var;
 
 .hero {
+  min-height: 680px;
+  height: 93vh;
+  display: flex;
+  align-items: center;
   .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5rem;
-    gap: 4rem;
+    padding-top: 3rem;
+
+    gap: 3.5rem;
     img {
       position: relative;
-      height: 420px;
-      width: auto;
+
+      width: 450px;
       z-index: 1;
     }
     span {
       display: inline-block;
       position: absolute;
       left: 50%;
-      top: 5rem;
+      top: 6rem;
       transform: translate(-50%, 0);
       font-size: 9rem;
       z-index: 0;
@@ -39,16 +44,24 @@
         padding: 15px 30px;
         @include var.helve;
         letter-spacing: 0.1px;
-        a {
-          color: white;
+
+        color: white;
+        &:hover {
+          box-shadow: inset 0 0 0 2px var.$orangered;
+          // border: var.$orangered solid 2px;
+          background-color: transparent;
+          color: var.$darkgrey;
         }
       }
       .view {
         @extend .order;
         background-color: transparent;
-        border: var.$orangered 2px solid;
-        a {
-          color: var.$darkgrey;
+        box-shadow: inset 0 0 0 2px var.$orangered;
+        color: var.$darkgrey;
+        &:hover {
+          background-color: var.$orangered;
+          box-shadow: none;
+          color: white;
         }
       }
     }

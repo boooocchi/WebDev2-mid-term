@@ -1,9 +1,61 @@
+.cta {
+  margin-bottom: 3rem;
+}
+.cta .wrapper {
+  background-color: white;
+  padding: 2.5rem 4rem;
+  border-radius: 1rem;
+}
+.cta .wrapper h1 {
+  font-family: "Big Shoulders Inline Text";
+  font-size: 2rem;
+  color: #fb422e;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.cta .wrapper p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.cta .wrapper .cta-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.cta .wrapper .cta-btns .order, .cta .wrapper .cta-btns .view {
+  background-color: #fb422e;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  padding: 15px 30px;
+  font-family: "Helvetica";
+  letter-spacing: 0.1px;
+  color: white;
+}
+.cta .wrapper .cta-btns .order:hover, .cta .wrapper .cta-btns .view:hover {
+  box-shadow: inset 0 0 0 2px #fb422e;
+  background-color: white;
+  color: rgb(45, 45, 45);
+}
+.cta .wrapper .cta-btns .view {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #fb422e;
+  color: rgb(45, 45, 45);
+}
+.cta .wrapper .cta-btns .view:hover {
+  background-color: #fb422e;
+  box-shadow: none;
+  color: white;
+}
+
 header {
-  width: 96%;
-  margin: 0.7rem auto 0;
-  height: 15vh;
-  min-height: 30px;
-  max-height: 40px;
+  width: 100%;
+  position: sticky;
+  z-index: 3;
+  padding: 0 25px;
+  margin: 0 auto;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +63,7 @@ header {
 header .cart,
 header .account {
   height: 1.2rem;
+  cursor: pointer;
 }
 header .cart {
   margin-left: 1rem;
@@ -24,25 +77,100 @@ header .burger-menu {
   border-radius: 50%;
   padding: 10px;
 }
+header .fukidashi {
+  transform: translate(300%, 0);
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 15px solid rgba(255, 255, 255, 0.888);
+  right: 27px;
+  top: 33px;
+  visibility: hidden;
+  transition: transform 0.3s;
+}
+header .viewFukidashi {
+  transform: translate(0, 0);
+  visibility: visible;
+  z-index: 3;
+}
+header .inside-cart {
+  transform: translate(21rem, 30rem);
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  width: 20rem;
+  height: 30rem;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.591);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.212);
+  overflow: scroll;
+  scrollbar-width: none;
+}
+header .inside-cart p:nth-child(1) {
+  font-family: "Big Shoulders Inline Text";
+  font-size: 2rem;
+}
+header .inside-cart p:nth-child(2) {
+  margin-top: auto;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.399);
+}
+header .inside-cart button {
+  margin-top: auto;
+  background-color: #fb422e;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  padding: 15px 30px;
+  font-family: "Helvetica";
+  letter-spacing: 0.1px;
+  color: white;
+}
+header .inside-cart .clearAll {
+  display: block;
+  text-align: right;
+  margin-left: auto;
+  color: rgb(113, 113, 113);
+  font-size: 0.9rem;
+}
+header .viewCart {
+  transform: translate(0, 30rem);
+  visibility: visible;
+  z-index: 2;
+}
 
+.hero {
+  min-height: 680px;
+  height: 93vh;
+  display: flex;
+  align-items: center;
+}
 .hero .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
-  gap: 4rem;
+  padding-top: 3rem;
+  gap: 3.5rem;
 }
 .hero .wrapper img {
   position: relative;
-  height: 420px;
-  width: auto;
+  width: 450px;
   z-index: 1;
 }
 .hero .wrapper span {
   display: inline-block;
   position: absolute;
   left: 50%;
-  top: 5rem;
+  top: 6rem;
   transform: translate(-50%, 0);
   font-size: 9rem;
   z-index: 0;
@@ -66,76 +194,150 @@ header .burger-menu {
   padding: 15px 30px;
   font-family: "Helvetica";
   letter-spacing: 0.1px;
-}
-.hero .wrapper .hero-btns .order a, .hero .wrapper .hero-btns .view a {
   color: white;
+}
+.hero .wrapper .hero-btns .order:hover, .hero .wrapper .hero-btns .view:hover {
+  box-shadow: inset 0 0 0 2px #fb422e;
+  background-color: transparent;
+  color: rgb(45, 45, 45);
 }
 .hero .wrapper .hero-btns .view {
   background-color: transparent;
-  border: #fb422e 2px solid;
-}
-.hero .wrapper .hero-btns .view a {
+  box-shadow: inset 0 0 0 2px #fb422e;
   color: rgb(45, 45, 45);
+}
+.hero .wrapper .hero-btns .view:hover {
+  background-color: #fb422e;
+  box-shadow: none;
+  color: white;
 }
 
 .special-deal {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin: 2rem 0 3rem;
+  overflow-x: hidden;
+  position: relative;
 }
-.special-deal .deal-card {
+.special-deal .wrapper {
+  height: 30rem;
+  position: relative;
+}
+.special-deal .wrapper .deal-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.special-deal .wrapper .deal-nav .scroll {
+  display: flex;
+  gap: 1rem;
+}
+.special-deal .wrapper .deal-nav .scroll i,
+.special-deal .wrapper .deal-nav .scroll span {
+  color: rgb(45, 45, 45);
+}
+.special-deal .wrapper .deal-nav .scroll i.active,
+.special-deal .wrapper .deal-nav .scroll span.active {
+  color: #fb422e;
+}
+.special-deal .wrapper .card-container .deal-card {
+  transition: all 1s;
   padding: 2rem 1rem 2rem 3rem;
   display: flex;
   width: 33rem;
+  position: relative;
   color: rgb(45, 45, 45);
   background-color: white;
   border-radius: 1rem;
+  position: absolute;
 }
-.special-deal .deal-card .deal-left {
+.special-deal .wrapper .card-container .deal-card.current {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.special-deal .wrapper .card-container .deal-card.next {
+  left: 35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+.special-deal .wrapper .card-container .deal-card.third {
+  left: 70rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.special-deal .wrapper .card-container .deal-card.left {
+  left: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.special-deal .wrapper .card-container .deal-card .deal-left {
   width: 32%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
 }
-.special-deal .deal-card .deal-left .deal-title {
+.special-deal .wrapper .card-container .deal-card .deal-left .deal-title {
   font-weight: 700;
   font-size: 1.1rem;
 }
-.special-deal .deal-card .deal-left .stars {
+.special-deal .wrapper .card-container .deal-card .deal-left .stars {
   margin-bottom: 1rem;
 }
-.special-deal .deal-card .deal-left .stars .star {
+.special-deal .wrapper .card-container .deal-card .deal-left .stars .star {
   height: 1rem;
   width: 1rem;
   color: #ffde3b;
 }
-.special-deal .deal-card .deal-left ul {
+.special-deal .wrapper .card-container .deal-card .deal-left ul {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.special-deal .deal-card .deal-left ul li {
+.special-deal .wrapper .card-container .deal-card .deal-left ul li {
   display: flex;
   align-items: center;
   color: rgb(99, 99, 99);
 }
-.special-deal .deal-card .deal-left ul li img {
+.special-deal .wrapper .card-container .deal-card .deal-left ul li img {
   height: 1.3rem;
   margin-right: 1rem;
 }
-.special-deal .deal-card .deal-left .cost span {
+.special-deal .wrapper .card-container .deal-card .deal-left .cost span {
   color: #fb422e;
   font-weight: 700;
   font-size: 1.1rem;
 }
-.special-deal .deal-card .right-pic {
+.special-deal .wrapper .card-container .deal-card .right-pic {
   width: 68%;
   text-align: center;
 }
-.special-deal .deal-card .right-pic img {
+.special-deal .wrapper .card-container .deal-card .right-pic img {
   width: 80%;
   vertical-align: middle;
+}
+.special-deal .wrapper .card-container .deal-card .addCart {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #fb422e;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  padding: 15px 30px;
+  font-family: "Helvetica";
+  letter-spacing: 0.1px;
+  color: white;
+}
+.special-deal .wrapper .card-container .deal-card .addCart:hover {
+  box-shadow: inset 0 0 0 2px #fb422e;
+  background-color: white;
+  color: rgb(45, 45, 45);
 }
 
 * {
@@ -149,12 +351,26 @@ header .burger-menu {
 body {
   background-color: #fff4f3;
   font-family: "Helvetica";
+  overflow-x: hidden;
+}
+body a {
+  cursor: pointer;
 }
 
 .wrapper {
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+h1 {
+  font-family: "Big Shoulders Inline Text";
+  font-size: 2rem;
+  color: #fb422e;
+}
+
+.hide {
+  display: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

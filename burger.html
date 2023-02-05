@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/58f4189fbb.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/58f4189fbb.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- font 'Big Shoulders Inline Text', cursive; -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,8 +17,12 @@
       href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@400;600;800;900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- css -->
     <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- javasript and jquery -->
+    <script defer src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Burger site</title>
   </head>
@@ -63,59 +70,182 @@
             stroke-linejoin="round"
             d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
           />
-      </div><!-- /.right-header -->
-      </svg>
+        </svg>
+      </div>
+      <!-- /.right-header -->
+      <span class="fukidashi">&nbsp;</span>
+      <div class="inside-cart">
+        <p>Shopping Cart</p>
+        <p class="emptyCart">Your Cart is Empty!!</p>
+        <ul class="list-items"></ul>
+        <a href="#">Checkout</a>
+        <a class="clearAll">Clear All</a>
+      </div>
     </header>
     <section class="hero">
-
       <div class="wrapper">
         <span>BURGER</span>
-        <img src="/img/hero-pic.png" alt="burger-combo-pic">
+        <img src="/img/hero-pic.png" alt="burger-combo-pic" />
         <div class="hero-btns">
-          <button class="order"><a href="#">Order Now</a></button>
-          <button class="view"><a href="#">View Menu</a></button>
-        </div><!-- /.hero-btns -->
-      </div><!-- /.wrapper -->
-
+          <a href="#" class="order">Order Now</a>
+          <a href="#" class="view">View Menu</a>
+        </div>
+        <!-- /.hero-btns -->
+      </div>
+      <!-- /.wrapper -->
     </section>
     <!-- /.hero -->
     <section class="menu"></section>
     <!-- /.menu -->
     <section class="special-deal">
-      
       <div class="wrapper">
-        <div class="deal-card">
-          <div class="deal-left">
-            <p class="deal-title">Classic Combo</p>
-            <!-- stars -->
-            <div class="stars">
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-              <i class="fa-solid fa-star star"></i>
-            </div><!-- /.stars -->
-            <ul>
-              <li><img src="img/burger.png" alt=""> 1 Burger</li>
-              <li><img src="/img/beverage.png" alt="">1 Drink</li>
-              <li><img src="/img/frech-fries.png" alt="">1 French Fries</li>
-            </ul>
-            <p class="cost">Total Cost: <span>$10.50</span></p>
-        
-        
-        
-        
-          </div><!-- /.deal-left -->
-          <div class="right-pic">
-            <img src="/img/hero-pic.png" alt="">
-          </div><!-- /.right-pic -->
-        </div><!-- /.deal-card -->
-      </div><!-- /.wrapper -->
-    </section> <!-- /.special-deal -->
-    <section class="features"></section>
+        <div class="deal-nav">
+          <h1>&nbsp;Special Deals</h1>
+          <div class="scroll">
+            <i class="fas fa-chevron-left"></i>
+            <span class="tag1 active">1</span>
+            <span class="tag2">2</span>
+            <span class="tag3">3</span>
+            <span class="tag4">4</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <!-- /.scroll -->
+        </div>
+        <!-- /.deal-nav -->
+        <div class="card-container">
+          <div class="deal-card card1 current">
+            <div class="deal-left">
+              <p class="deal-title">Classic Combo</p>
+              <!-- stars -->
+              <div class="stars">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+              </div>
+              <!-- /.stars -->
+              <ul>
+                <li><img src="img/burger.png" alt="" /> 1 Burger</li>
+                <li><img src="/img/beverage.png" alt="" />1 Drink</li>
+                <li><img src="/img/frech-fries.png" alt="" />1 French Fries</li>
+              </ul>
+              <p class="cost">Total Cost: <span>$10.50</span></p>
+            </div>
+            <!-- /.deal-left -->
+            <div class="right-pic">
+              <img src="/img/hero-pic.png" alt="" />
+            </div>
+            <!-- /.right-pic -->
+            <a href="#" class="addCart">Add to Cart</a>
+          </div>
+          <!-- /.deal-card -->
+          <div class="deal-card card2 next">
+            <div class="deal-left">
+              <p class="deal-title">Classic Combo2</p>
+              <!-- stars -->
+              <div class="stars">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+              </div>
+              <!-- /.stars -->
+              <ul>
+                <li><img src="img/burger.png" alt="" /> 1 Burger</li>
+                <li><img src="/img/beverage.png" alt="" />1 Drink</li>
+                <li><img src="/img/frech-fries.png" alt="" />1 French Fries</li>
+              </ul>
+              <p class="cost">Total Cost: <span>$10.50</span></p>
+            </div>
+            <!-- /.deal-left -->
+            <div class="right-pic">
+              <img src="/img/hero-pic.png" alt="" />
+            </div>
+            <!-- /.right-pic -->
+            <a href="#" class="addCart">Add to Cart</a>
+          </div>
+          <!-- /.deal-card -->
+          <div class="deal-card card3 third">
+            <div class="deal-left">
+              <p class="deal-title">Classic Combo3</p>
+              <!-- stars -->
+              <div class="stars">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+              </div>
+              <!-- /.stars -->
+              <ul>
+                <li><img src="img/burger.png" alt="" /> 1 Burger</li>
+                <li><img src="/img/beverage.png" alt="" />1 Drink</li>
+                <li><img src="/img/frech-fries.png" alt="" />1 French Fries</li>
+              </ul>
+              <p class="cost">Total Cost: <span>$10.50</span></p>
+              <a href="#" class="addCart">Add to Cart</a>
+            </div>
+            <!-- /.deal-left -->
+            <div class="right-pic">
+              <img src="/img/hero-pic.png" alt="" />
+            </div>
+            <!-- /.right-pic -->
+          </div>
+          <!-- /.deal-card -->
+          <div class="deal-card card4 left">
+            <div class="deal-left">
+              <p class="deal-title">Classic Combo4</p>
+              <!-- stars -->
+              <div class="stars">
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+                <i class="fa-solid fa-star star"></i>
+              </div>
+              <!-- /.stars -->
+              <ul>
+                <li><img src="img/burger.png" alt="" /> 1 Burger</li>
+                <li><img src="/img/beverage.png" alt="" />1 Drink</li>
+                <li><img src="/img/frech-fries.png" alt="" />1 French Fries</li>
+              </ul>
+              <p class="cost">Total Cost: <span>$10.50</span></p>
+            </div>
+            <!-- /.deal-left -->
+            <div class="right-pic">
+              <img src="/img/hero-pic.png" alt="" />
+            </div>
+            <!-- /.right-pic -->
+            <a href="#" class="addCart">Add to Cart</a>
+          </div>
+          <!-- /.deal-card -->
+        </div>
+        <!-- /.card-container -->
+      </div>
+      <!-- /.wrapper -->
+    </section>
+    <!-- /.special-deal -->
 
     <!-- /.features -->
-    <section class="cta"></section>
+    <section class="cta">
+      <div class="wrapper">
+        <h1>Explore Signature Menu</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ex
+          molestiae ipsa labore mollitia. Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Autem nemo ratione corrupti suscipit
+          illum, ullam nisi architecto delectus non?
+        </p>
+        <div class="cta-btns">
+          <a href="#" class="order">Order Now</a>
+          <a class="view">View Menu</a>
+        </div>
+        <!-- /.cta-btns -->
+      </div>
+      <!-- /.wrapper -->
+    </section>
     <!-- /.cta(call to action) -->
     <footer></footer>
   </body>

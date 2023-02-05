@@ -1,6 +1,5 @@
 @use "variable" as var;
 @use "cta";
-@use "features";
 @use "header";
 @use "hero";
 @use "menu";
@@ -17,10 +16,25 @@
 body {
   background-color: var.$lightorange;
   @include var.helve;
+  overflow-x: hidden;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 .wrapper {
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+h1 {
+  @include var.bigshol;
+  font-size: 2rem;
+  color: var.$orangered;
+}
+
+.hide {
+  display: hidden;
 }
