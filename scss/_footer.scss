@@ -2,8 +2,9 @@
 
 footer {
   @include var.helve;
-  color: #7D6E6F;
+  color: #7d6e6f;
   font-size: 0.6rem;
+  margin-bottom: 1rem;
 
   .footer-content {
     display: flex;
@@ -24,7 +25,7 @@ footer {
       margin-right: 4rem;
     }
 
-    .social{
+    .social {
       display: flex;
       justify-content: space-between;
       text-align: center;
@@ -34,7 +35,7 @@ footer {
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
-      background-color: #E7F1F6;
+      background-color: #e7f1f6;
       margin-right: 0.7rem;
       display: flex;
       align-items: center;
@@ -43,22 +44,17 @@ footer {
 
     .social-facebook {
       @extend .social-twitter;
-      background-color: #E9E6EC;
-      
+      background-color: #e9e6ec;
     }
 
     .social-linkedin {
       @extend .social-twitter;
-      background-color: #EAEEF3;
+      background-color: #eaeef3;
     }
-
 
     .social-img {
       width: 1.3rem;
       height: auto;
     }
   }
-
-
-  
 }
