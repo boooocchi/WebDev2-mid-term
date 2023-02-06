@@ -157,6 +157,53 @@ header .burger-menu {
   color: rgb(30, 30, 30);
 }
 
+footer {
+  font-family: "Helvetica";
+  color: rgb(30, 30, 30);
+  font-size: 0.6rem;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .footer-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .footer-right .terms {
+  margin-right: 4rem;
+}
+footer .footer-right .policy {
+  margin-right: 4rem;
+}
+footer .footer-right .social {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+footer .footer-right .social-twitter, footer .footer-right .social-linkedin, footer .footer-right .social-facebook {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #E7F1F6;
+  margin-right: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer-right .social-facebook {
+  background-color: #E9E6EC;
+}
+footer .footer-right .social-linkedin {
+  background-color: #EAEEF3;
+}
+footer .footer-right .social-img {
+  width: 1.3rem;
+  height: auto;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -3,18 +3,62 @@
 footer {
   @include var.helve;
   color: var.$darkgrey;
-  font-size: 1rem;
+  font-size: 0.6rem;
 
   .footer-content {
     display: flex;
-    @include var.helve;
-  color: var.$darkgrey;
-  font-size: 1rem;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .footer-right {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
+    .terms {
+      margin-right: 4rem;
+    }
+
+    .policy {
+      margin-right: 4rem;
+    }
+
+    .social{
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .social-twitter {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: #E7F1F6;
+      margin-right: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-facebook {
+      @extend .social-twitter;
+      background-color: #E9E6EC;
+      
+    }
+
+    .social-linkedin {
+      @extend .social-twitter;
+      background-color: #EAEEF3;
+    }
+
+
+    .social-img {
+      width: 1.3rem;
+      height: auto;
+    }
   }
+
+
   
 }
