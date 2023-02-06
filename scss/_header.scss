@@ -6,6 +6,8 @@ header {
   z-index: 3;
   padding: 0 25px;
   margin: 0 auto;
+  top: 0;
+  background-color: var.$lightorange;
 
   height: 45px;
 
@@ -15,11 +17,33 @@ header {
 
   .cart,
   .account {
-    height: 1.2rem;
+    height: 1.3rem;
     cursor: pointer;
   }
-  .cart {
-    margin-left: 1rem;
+  .cartContainer {
+    display: inline-block;
+    width: 40px;
+    .cart {
+      margin-left: 1rem;
+    }
+    .quantityCircle {
+      position: absolute;
+      display: inline-block;
+      font-size: 0.8rem;
+      color: white;
+
+      height: 18px;
+      width: 18px;
+      background-color: var.$orangered;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 18px;
+      z-index: 5;
+      right: 18px;
+      top: 20px;
+
+      cursor: pointer;
+    }
   }
   .burger-menu {
     height: 2.5rem;
@@ -49,6 +73,7 @@ header {
     visibility: visible;
     z-index: 3;
   }
+
   .inside-cart {
     transform: translate(21rem, 30rem);
     position: absolute;
@@ -80,7 +105,7 @@ header {
         color: rgba(0, 0, 0, 0.399);
       }
     }
-    button {
+    .checkout {
       margin-top: auto;
       background-color: var.$orangered;
       border: none;

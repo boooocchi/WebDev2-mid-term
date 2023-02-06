@@ -55,14 +55,23 @@ $(".fa-chevron-right").click(function () {
   }
 });
 
+//view cart or remove card window
 $(document).click(function (e) {
-  if (!e.target.closest(".inside-cart") && !e.target.closest(".cart")) {
+  if (
+    !e.target.closest(".inside-cart") &&
+    !e.target.closest(".cart") &&
+    !e.target.closest(".quantityCircle")
+  ) {
     $(".inside-cart").removeClass("viewCart");
     $(".fukidashi").removeClass("viewFukidashi");
   }
 });
 
-$(".cart").click(function () {
+$(".cart, .quantityCircle").click(function () {
   $(".inside-cart").toggleClass("viewCart");
   $(".fukidashi").toggleClass("viewFukidashi");
 });
+// $(".quantityCircle").click(function () {
+//   $(".inside-cart").removeClass("viewCart");
+//   $(".fukidashi").removeClass("viewFukidashi");
+// });

@@ -17,6 +17,7 @@ body {
   background-color: var.$lightorange;
   @include var.helve;
   overflow-x: hidden;
+  position: relative;
 
   a {
     cursor: pointer;
