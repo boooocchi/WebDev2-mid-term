@@ -12,7 +12,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2.5rem;
 
       .scroll {
         display: flex;
@@ -48,24 +47,24 @@
 
         &.current {
           left: 0;
-          top: 50%;
+          top: 45%;
           transform: translateY(-50%);
         }
         &.next {
           left: 35rem;
-          top: 50%;
+          top: 45%;
           transform: translateY(-50%);
           opacity: 0.5;
         }
         &.third {
           left: 70rem;
-          top: 50%;
+          top: 45%;
           transform: translateY(-50%);
           opacity: 0;
         }
         &.left {
           left: -100%;
-          top: 50%;
+          top: 45%;
           transform: translateY(-50%);
           opacity: 0;
         }

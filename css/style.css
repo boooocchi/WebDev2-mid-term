@@ -3,7 +3,7 @@
 }
 .cta .wrapper {
   background-color: white;
-  padding: 2.5rem 4rem;
+  padding: 2.5rem 5rem;
   border-radius: 1rem;
 }
 .cta .wrapper h1 {
@@ -242,7 +242,7 @@ header .viewCart {
   background-color: white;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 .menu-top .direction-icon {
   width: 3rem;
@@ -339,7 +339,6 @@ header .viewCart {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.5rem;
 }
 .special-deal .wrapper .deal-nav .scroll {
   display: flex;
@@ -366,24 +365,24 @@ header .viewCart {
 }
 .special-deal .wrapper .card-container .deal-card.current {
   left: 0;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
 }
 .special-deal .wrapper .card-container .deal-card.next {
   left: 35rem;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   opacity: 0.5;
 }
 .special-deal .wrapper .card-container .deal-card.third {
   left: 70rem;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   opacity: 0;
 }
 .special-deal .wrapper .card-container .deal-card.left {
   left: -100%;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
   opacity: 0;
 }
