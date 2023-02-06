@@ -3,6 +3,10 @@
 .hero {
   height: 85vh;
   .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
     img {
       position: relative;
       height: 420px;
@@ -13,15 +17,20 @@
       display: inline-block;
       position: absolute;
       left: 50%;
-
-      font-size: 5rem;
+      top: 5rem;
+      transform: translate(-50%, 0);
+      font-size: 9rem;
       z-index: 0;
       @include var.bigshol;
       opacity: 0.3;
       font-weight: 900;
       color: var.$orangered;
+      letter-spacing: 1rem;
     }
     .hero-btns {
+      display: flex;
+      @include var.center;
+      gap: 1.5rem;
       .order {
         background-color: var.$orangered;
         border: none;
