@@ -1,0 +1,20 @@
+@use "variable" as var;
+
+footer {
+  @include var.helve;
+  color: var.$darkgrey;
+  font-size: 1rem;
+
+  .footer-content {
+    display: flex;
+    @include var.helve;
+  color: var.$darkgrey;
+  font-size: 1rem;
+  }
+
+  .footer-right {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+}
