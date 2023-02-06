@@ -5,6 +5,7 @@
 @use "hero";
 @use "menu";
 @use "special-deal";
+@use "footer.scss";
 
 * {
   box-sizing: border-box;
@@ -16,4 +17,9 @@
 
 body {
   background-color: var.$lightorange;
+}
+
+.wrapper{
+  width:80%;
+  margin:0 auto;
 }
