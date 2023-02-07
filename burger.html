@@ -23,6 +23,8 @@
     <!-- javasript and jquery -->
     <script defer src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Burger site</title>
   </head>
@@ -79,7 +81,28 @@
       <span class="fukidashi">&nbsp;</span>
 
       <div class="inside-cart">
-        <p>Shopping Cart</p>
+        <template>
+          <li class="item-container">
+            <div class="cartPic-container">
+              <img class="cartPic" src="" alt="" />
+            </div>
+            <div class="detail-container">
+              <ul>
+                <li class="namePrice">
+                  <span class="item-name"></span
+                  ><span>$<span class="price-number"></span></span>
+                </li>
+                <li class="product-price">
+                  <span><span>x</span><span class="item-quantity"></span></span
+                  ><span calss="subtotal"
+                    ><span>subtotal: $</span><span class="subtotalNum"></span
+                  ></span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </template>
+        <p class="cart-title">Shopping Cart</p>
         <p class="emptyCart">Your Cart is Empty!!</p>
         <ul class="list-items"></ul>
         <a href="#" class="checkout">Checkout</a>
@@ -153,7 +176,11 @@
                 <i class="fa-solid fa-star star"></i>
                 <i class="fa-solid fa-star star"></i>
               </div>
+<<<<<<< HEAD
               <p class="menu-price" id="menu-price1">$10.77</p>
+=======
+              <p class="menu-price">$<span class="price">10.77</span></p>
+>>>>>>> kota
             </div>
             <a href="#" class="addCart">Add to Cart</a>
           </div>
@@ -174,7 +201,11 @@
                 <i class="fa-solid fa-star star"></i>
                 <i class="fa-solid fa-star star"></i>
               </div>
+<<<<<<< HEAD
               <p class="menu-price" id="menu-price2">$7.77</p>
+=======
+              <p class="menu-price">$<span class="price">7.77</span></p>
+>>>>>>> kota
             </div>
             <a href="#" class="addCart">Add to Cart</a>
           </div>
@@ -197,7 +228,11 @@
                 <i class="fa-solid fa-star star"></i>
                 <i class="fa-solid fa-star star"></i>
               </div>
+<<<<<<< HEAD
               <p class="menu-price" id="menu-price3">$12.77</p>
+=======
+              <p class="menu-price">$<span class="price">12.77</span></p>
+>>>>>>> kota
             </div>
             <a href="#" class="addCart">Add to Cart</a>
           </div>
@@ -219,7 +254,11 @@
                 <i class="fa-solid fa-star star"></i>
                 <i class="fa-solid fa-star star"></i>
               </div>
+<<<<<<< HEAD
               <p class="menu-price" id="menu-price4">$5.77</p>
+=======
+              <p class="menu-price">$<span class="price">5.77</span></p>
+>>>>>>> kota
             </div>
             <a href="#" class="addCart">Add to Cart</a>
           </div>
@@ -241,7 +280,11 @@
                 <i class="fa-solid fa-star star"></i>
                 <i class="fa-solid fa-star star"></i>
               </div>
+<<<<<<< HEAD
               <p class="menu-price" id="menu-price5">$13.77</p>
+=======
+              <p class="menu-price">$<span class="price">13.77</span></p>
+>>>>>>> kota
             </div>
             <a href="#" class="addCart">Add to Cart</a>
           </div>
@@ -263,7 +306,11 @@
                 <i class="fa-solid fa-star star"></i>
                 <i class="fa-solid fa-star star"></i>
               </div>
+<<<<<<< HEAD
               <p class="menu-price" id="menu-price6">$8.77</p>
+=======
+              <p class="menu-price">$<span class="price">8.77</span></p>
+>>>>>>> kota
             </div>
             <a href="#" class="addCart">Add to Cart</a>
           </div>
@@ -453,6 +500,5 @@
         </div>
       </div>
     </footer>
-    <script src="/WebDev2-mid-term/script.js"></script>
   </body>
 </html>

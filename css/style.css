@@ -135,18 +135,74 @@ header .inside-cart {
   padding: 1.5rem 1.5rem 1rem;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.212);
   overflow: scroll;
-  scrollbar-width: none;
 }
-header .inside-cart p:nth-child(1) {
+header .inside-cart .list-items {
+  width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+  margin-bottom: 1rem;
+}
+header .inside-cart .list-items .item-container {
+  display: flex;
+  border-bottom: #fb422e 1px solid;
+  width: 100%;
+  height: 6rem;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+header .inside-cart .list-items .item-container .cartPic-container {
+  width: 35%;
+}
+header .inside-cart .list-items .item-container .cartPic-container .cartPic {
+  height: 65px;
+  width: 65px;
+}
+header .inside-cart .list-items .item-container .detail-container {
+  width: 53%;
+  display: flex;
+}
+header .inside-cart .list-items .item-container .detail-container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 0.8rem;
+}
+header .inside-cart .list-items .item-container .detail-container ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+header .inside-cart .list-items .item-container .item-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+}
+header .inside-cart .list-items .item-container .cartPic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .inside-cart .list-items .item-container .namePrice {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+header .inside-cart .list-items .item-container .productPrice {
+  font-size: 0.7rem;
+}
+header .cart-title {
   font-family: "Big Shoulders Inline Text";
   font-size: 2rem;
 }
-header .inside-cart p:nth-child(2) {
+header .emptyCart {
   margin-top: auto;
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.399);
 }
-header .inside-cart .checkout {
+header .checkout {
   margin-top: auto;
   background-color: #fb422e;
   border: none;
@@ -157,7 +213,7 @@ header .inside-cart .checkout {
   letter-spacing: 0.1px;
   color: white;
 }
-header .inside-cart .clearAll {
+header .clearAll {
   display: block;
   text-align: right;
   margin-left: auto;
@@ -267,7 +323,7 @@ header .viewCart {
   row-gap: 4%;
   width: 45rem;
   height: auto;
-  margin: 2rem auto 8rem;
+  margin: 2rem auto 8rem;  
 }
 .menu-botom .contents-top {
   width: 10rem;
@@ -456,7 +512,7 @@ header .viewCart {
 
 footer {
   font-family: "Helvetica";
-  color: #7d6e6f;
+  color: #7D6E6F;
   font-size: 0.6rem;
   margin-bottom: 1rem;
 }
@@ -533,7 +589,7 @@ h1 {
 }
 
 .hide {
-  display: hidden;
+  display: none;
 }
 
 .wrapper {

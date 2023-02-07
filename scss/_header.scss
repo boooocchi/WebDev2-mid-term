@@ -92,38 +92,100 @@ header {
     padding: 1.5rem 1.5rem 1rem;
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.212);
     overflow: scroll;
-    scrollbar-width: none;
 
-    p {
-      &:nth-child(1) {
-        @include var.bigshol;
-        font-size: 2rem;
+    //list of items
+    .list-items {
+      width: 100%;
+      overflow: scroll;
+      scrollbar-width: none;
+      margin-bottom: 1rem;
+      .item-container {
+        display: flex;
+
+        border-bottom: var.$orangered 1px solid;
+        width: 100%;
+        height: 6rem;
+        gap: 1rem;
+        margin: 1rem 0;
+
+        .cartPic-container {
+          width: 35%;
+          .cartPic {
+            height: 65px;
+            width: 65px;
+          }
+        }
+        .detail-container {
+          width: 53%;
+          display: flex;
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            gap: 0.8rem;
+
+            li {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              gap: 0.8rem;
+            }
+          }
+        }
+        .item-name {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .cartPic-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .namePrice {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1rem;
+        }
+        .productPrice {
+          font-size: 0.7rem;
+        }
       }
-      &:nth-child(2) {
-        margin-top: auto;
-        font-size: 1.2rem;
-        color: rgba(0, 0, 0, 0.399);
-      }
-    }
-    .checkout {
-      margin-top: auto;
-      background-color: var.$orangered;
-      border: none;
-      border-radius: 2rem;
-      font-size: 0.8rem;
-      padding: 15px 30px;
-      @include var.helve;
-      letter-spacing: 0.1px;
-      color: white;
-    }
-    .clearAll {
-      display: block;
-      text-align: right;
-      margin-left: auto;
-      color: rgb(113, 113, 113);
-      font-size: 0.9rem;
     }
   }
+
+  .cart-title {
+    @include var.bigshol;
+    font-size: 2rem;
+  }
+  .emptyCart {
+    margin-top: auto;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.399);
+  }
+
+  .checkout {
+    margin-top: auto;
+    background-color: var.$orangered;
+    border: none;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    padding: 15px 30px;
+    @include var.helve;
+    letter-spacing: 0.1px;
+    color: white;
+  }
+  .clearAll {
+    display: block;
+    text-align: right;
+    margin-left: auto;
+    color: rgb(113, 113, 113);
+    font-size: 0.9rem;
+  }
+
   .viewCart {
     transform: translate(0, 30rem);
     visibility: visible;
