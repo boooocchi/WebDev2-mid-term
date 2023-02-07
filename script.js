@@ -192,6 +192,14 @@ document.addEventListener('DOMContentLoaded', function(){
     menuTitle6.innerHTML = "Water";
 
     //price
+
+    // const price=[3.50,3.50,3.50,3.50,3.50,2.50]
+    // for(let i = 0; i < price.length; i++){
+    //   const itemprice=parseFloat.Math.round((price[i])/100)
+    //   document.getElementById(`menu-price${i+1}`).innerHTML = `<p><span>$</span><span>${itemprice}</span></p>`
+    // }
+
+
     menuPrice1.innerHTML = "$3.50"
     menuPrice2.innerHTML = "$3.50"
     menuPrice3.innerHTML = "$3.50"
