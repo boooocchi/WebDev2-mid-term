@@ -150,6 +150,10 @@ header .inside-cart .list-items .item-container {
   gap: 1rem;
   margin: 1rem 0;
 }
+header .inside-cart .list-items .item-container .item-delete {
+  font-size: 1rem;
+  align-items: center;
+}
 header .inside-cart .list-items .item-container .cartPic-container {
   width: 35%;
 }

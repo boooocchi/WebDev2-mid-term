@@ -108,6 +108,11 @@ header {
         gap: 1rem;
         margin: 1rem 0;
 
+        .item-delete {
+          font-size: 1rem;
+          align-items: center;
+        }
+
         .cartPic-container {
           width: 35%;
           .cartPic {
