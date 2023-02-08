@@ -304,6 +304,9 @@ header .viewCart {
   width: 3rem;
   height: 3rem;
 }
+.menu-top .menu-direction1 {
+  padding: 1rem 0;
+}
 .menu-top .menu-direction {
   padding: 1rem 0;
   opacity: 0.5;
@@ -323,7 +326,7 @@ header .viewCart {
   row-gap: 4%;
   width: 45rem;
   height: auto;
-  margin: 2rem auto 8rem;  
+  margin: 3.5rem auto;
 }
 .menu-botom .contents-top {
   width: 10rem;
@@ -512,7 +515,7 @@ header .viewCart {
 
 footer {
   font-family: "Helvetica";
-  color: #7D6E6F;
+  color: #7d6e6f;
   font-size: 0.6rem;
   margin-bottom: 1rem;
 }

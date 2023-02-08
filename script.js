@@ -88,7 +88,7 @@ $(".cart, .quantityCircle").click(function () {
 // $(".quantityCircle").click(function () {
 //   $(".inside-cart").removeClass("viewCart");
 //   $(".fukidashi").removeClass("viewFukidashi");
-// });
+
 
 
 
