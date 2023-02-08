@@ -4,8 +4,8 @@ header {
   width: 100%;
   position: sticky;
   z-index: 3;
-  padding: 0 25px;
-  margin: 0 auto;
+  padding: 0 20px;
+  margin: 3px auto 0;
   top: 0;
   background-color: var.$lightorange;
 
@@ -29,7 +29,7 @@ header {
     .quantityCircle {
       position: absolute;
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       color: white;
 
       height: 18px;
@@ -82,8 +82,8 @@ header {
     width: 20rem;
     height: 30rem;
     visibility: hidden;
-    background-color: rgba(255, 255, 255, 0.591);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.655);
+    backdrop-filter: blur(7px);
     transition: transform 0.3s;
     border-radius: 1rem;
     display: flex;
@@ -157,6 +157,9 @@ header {
         }
         .productPrice {
           font-size: 0.7rem;
+        }
+        .subtotaltext {
+          font-size: 0.8rem;
         }
       }
     }

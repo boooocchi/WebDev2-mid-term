@@ -53,8 +53,8 @@ header {
   width: 100%;
   position: sticky;
   z-index: 3;
-  padding: 0 25px;
-  margin: 0 auto;
+  padding: 0 20px;
+  margin: 3px auto 0;
   top: 0;
   background-color: #fff4f3;
   height: 45px;
@@ -77,7 +77,7 @@ header .cartContainer .cart {
 header .cartContainer .quantityCircle {
   position: absolute;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: white;
   height: 18px;
   width: 18px;
@@ -125,8 +125,8 @@ header .inside-cart {
   width: 20rem;
   height: 30rem;
   visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.591);
-  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.655);
+  backdrop-filter: blur(7px);
   transition: transform 0.3s;
   border-radius: 1rem;
   display: flex;
@@ -197,6 +197,9 @@ header .inside-cart .list-items .item-container .namePrice {
 header .inside-cart .list-items .item-container .productPrice {
   font-size: 0.7rem;
 }
+header .inside-cart .list-items .item-container .subtotaltext {
+  font-size: 0.8rem;
+}
 header .cart-title {
   font-family: "Big Shoulders Inline Text";
   font-size: 2rem;
@@ -240,7 +243,7 @@ header .viewCart {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
+  padding-top: 1rem;
   gap: 3.5rem;
 }
 .hero .wrapper img {
@@ -302,7 +305,7 @@ header .viewCart {
   background-color: white;
   align-items: center;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 .menu-top .direction-icon {
   width: 3rem;
@@ -330,7 +333,7 @@ header .viewCart {
   row-gap: 4%;
   width: 45rem;
   height: auto;
-  margin: 3.5rem auto;
+  margin: 2.5rem auto;
 }
 .menu-botom .contents-top {
   width: 10rem;
@@ -390,7 +393,7 @@ header .viewCart {
 }
 
 .special-deal {
-  margin: 2rem 0 2rem;
+  margin: 7rem 0 2rem;
   overflow-x: hidden;
   position: relative;
 }
@@ -497,7 +500,7 @@ header .viewCart {
   width: 80%;
   vertical-align: middle;
 }
-.special-deal .wrapper .card-container .deal-card .addCart {
+.special-deal .wrapper .card-container .deal-card .special-addCart {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -511,7 +514,7 @@ header .viewCart {
   letter-spacing: 0.1px;
   color: white;
 }
-.special-deal .wrapper .card-container .deal-card .addCart:hover {
+.special-deal .wrapper .card-container .deal-card .special-addCart:hover {
   box-shadow: inset 0 0 0 2px #fb422e;
   background-color: white;
   color: rgb(45, 45, 45);
@@ -596,7 +599,7 @@ h1 {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .wrapper {
