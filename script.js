@@ -1,3 +1,26 @@
+const postTemplate = document.querySelector("template");
+const increaseNumberInCart = function (exist, itemPrice) {
+  exist.quantity = Number(exist.quantity) + 1;
+  const listIndex = titles.indexOf(exist);
+  document
+    .querySelector(".list-items")
+    .children[listIndex].querySelector(".item-quantity").textContent =
+    exist.quantity;
+  document
+    .querySelector(".list-items")
+    .children[listIndex].querySelector(".subtotalNum").textContent = (
+    itemPrice * exist.quantity
+  ).toFixed(2);
+};
+const increaseCircleNum = function () {
+  let circleNum = 0;
+  titles.forEach((q) => {
+    circleNum += parseInt(q.quantity);
+  });
+  document.querySelector(".quantityCircle").textContent = circleNum;
+  document.querySelector(".quantityCircle").classList.remove("hide");
+};
+
 //caroussel
 
 $(".fa-chevron-right").click(function () {
@@ -15,45 +38,20 @@ $(".fa-chevron-right").click(function () {
     $(".tag1").addClass("active");
   }
 
-  if ($(".card1").hasClass("current")) {
-    $(".card1").removeClass("current").addClass("left");
-  } else if ($(".card1").hasClass("third")) {
-    $(".card1").removeClass("third").addClass("next");
-  } else if ($(".card1").hasClass("next")) {
-    $(".card1").removeClass("next").addClass("current");
-  } else if ($(".card1").hasClass("left")) {
-    $(".card1").removeClass("left").addClass("third");
-  }
-
-  if ($(".card2").hasClass("current")) {
-    $(".card2").removeClass("current").addClass("left");
-  } else if ($(".card2").hasClass("third")) {
-    $(".card2").removeClass("third").addClass("next");
-  } else if ($(".card2").hasClass("next")) {
-    $(".card2").removeClass("next").addClass("current");
-  } else if ($(".card2").hasClass("left")) {
-    $(".card2").removeClass("left").addClass("third");
-  }
-  if ($(".card3").hasClass("current")) {
-    $(".card3").removeClass("current").addClass("left");
-  } else if ($(".card3").hasClass("third")) {
-    $(".card3").removeClass("third").addClass("next");
-  } else if ($(".card3").hasClass("next")) {
-    $(".card3").removeClass("next").addClass("current");
-  } else if ($(".card3").hasClass("left")) {
-    $(".card3").removeClass("left").addClass("third");
-  }
-
-  if ($(".card4").hasClass("current")) {
-    $(".card4").removeClass("current").addClass("left");
-  } else if ($(".card4").hasClass("third")) {
-    $(".card4").removeClass("third").addClass("next");
-  } else if ($(".card4").hasClass("next")) {
-    $(".card4").removeClass("next").addClass("current");
-  } else if ($(".card4").hasClass("left")) {
-    $(".card4").removeClass("left").addClass("third");
+  for (let i = 1; i <= 4; i++) {
+    if ($(`.card${i}`).hasClass("current")) {
+      $(`.card${i}`).removeClass("current").addClass("left");
+    } else if ($(`.card${i}`).hasClass("third")) {
+      $(`.card${i}`).removeClass("third").addClass("next");
+    } else if ($(`.card${i}`).hasClass("next")) {
+      $(`.card${i}`).removeClass("next").addClass("current");
+    } else if ($(`.card${i}`).hasClass("left")) {
+      $(`.card${i}`).removeClass("left").addClass("third");
+    }
   }
 });
+
+const titles = [];
 
 //view cart or remove card window
 $(document).click(function (e) {
@@ -71,7 +69,89 @@ $(".cart, .quantityCircle").click(function () {
   $(".inside-cart").toggleClass("viewCart");
   $(".fukidashi").toggleClass("viewFukidashi");
 });
-// $(".quantityCircle").click(function () {
-//   $(".inside-cart").removeClass("viewCart");
-//   $(".fukidashi").removeClass("viewFukidashi");
-// });
+
+//adding items into a cart
+$(".addCart").click(function (e) {
+  e.preventDefault();
+  document.querySelector(".emptyCart").classList.add("hide");
+
+  const data = {
+    title: $(e.target.parentElement).find(".menu-title").text(),
+    price: e.target.previousElementSibling.children[1].children[0].textContent,
+    img: $(e.target.parentElement).find(".menu-img").attr("src"),
+    quantity: 1,
+  };
+
+  axios
+    .post("https://run.mocky.io/v3/b2b2fbd3-f9fc-4932-bb6b-257dda4c5407", data)
+    .then((response) => {
+      const postListClone = document.importNode(postTemplate.content, true);
+      const itemTitle = JSON.parse(response.config.data).title;
+      const itemImg = JSON.parse(response.config.data).img;
+      const itemPrice = JSON.parse(response.config.data).price;
+      const itemQuantity = JSON.parse(response.config.data).quantity;
+      const subTotal = itemQuantity * itemPrice;
+
+      var exist = titles.find((e) => e.title === itemTitle);
+      if (!exist) {
+        titles.push(data);
+        postListClone.querySelector(".price-number").textContent = itemPrice;
+        postListClone.querySelector(".cartPic").src = itemImg;
+        postListClone.querySelector(".item-name").innerHTML = itemTitle;
+        postListClone.querySelector(".item-quantity").innerHTML = itemQuantity;
+        postListClone.querySelector(".subtotalNum").textContent = subTotal;
+
+        document.querySelector(".list-items").append(postListClone);
+      } else {
+        //increse the number of items thats already in a cart
+        increaseNumberInCart(exist, itemPrice);
+      }
+
+      //the number of items in a cart
+      increaseCircleNum();
+    })
+    .catch((error) => console.log(error));
+});
+
+//adding items into a cart
+$(".special-addCart").click(function (e) {
+  e.preventDefault();
+  document.querySelector(".emptyCart").classList.add("hide");
+
+  const data = {
+    title: $(e.target.parentElement).find(".deal-title").text(),
+    price: $(e.target.parentElement).find(".specialDeal-price").text(),
+    img: $(e.target.parentElement).find(".right-pic>img").attr("src"),
+    quantity: 1,
+  };
+
+  axios
+    .post("https://run.mocky.io/v3/b2b2fbd3-f9fc-4932-bb6b-257dda4c5407", data)
+    .then((response) => {
+      const postListClone = document.importNode(postTemplate.content, true);
+      const itemTitle = JSON.parse(response.config.data).title;
+      const itemImg = JSON.parse(response.config.data).img;
+      const itemPrice = JSON.parse(response.config.data).price;
+      const itemQuantity = JSON.parse(response.config.data).quantity;
+      const subTotal = (itemQuantity * itemPrice).toFixed(2);
+
+      var exist = titles.find((e) => e.title === itemTitle);
+      if (!exist) {
+        titles.push(data);
+        postListClone.querySelector(".price-number").textContent = itemPrice;
+        postListClone.querySelector(".cartPic").src = itemImg;
+        postListClone.querySelector(".item-name").innerHTML = itemTitle;
+        postListClone.querySelector(".item-quantity").innerHTML = itemQuantity;
+        postListClone.querySelector(".subtotalNum").textContent = subTotal;
+
+        document.querySelector(".list-items").append(postListClone);
+      } else {
+        //increse the number of items thats already in a cart
+        increaseNumberInCart(exist, itemPrice);
+      }
+
+      //the number of items in a cart
+      increaseCircleNum();
+    })
+    .catch((error) => console.log(error));
+});
