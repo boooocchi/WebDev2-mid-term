@@ -127,12 +127,12 @@ document.addEventListener(
       menuTitle6.innerHTML = "Spicy Chicken";
 
       //price
-      menuPrice1.innerHTML = "$10.77";
-      menuPrice2.innerHTML = "$7.77";
-      menuPrice3.innerHTML = "$12.77";
-      menuPrice4.innerHTML = "$$5.77";
-      menuPrice5.innerHTML = "$13.77";
-      menuPrice6.innerHTML = "$8.77";
+      menuPrice1.innerHTML = "10.77";
+      menuPrice2.innerHTML = "7.77";
+      menuPrice3.innerHTML = "12.77";
+      menuPrice4.innerHTML = "5.77";
+      menuPrice5.innerHTML = "13.77";
+      menuPrice6.innerHTML = "8.77";
     });
 
     menuDirection2.addEventListener("click", function () {
@@ -157,12 +157,12 @@ document.addEventListener(
       menuTitle6.innerHTML = "Apple Pie";
 
       //price
-      menuPrice1.innerHTML = "$5.30";
-      menuPrice2.innerHTML = "$5.30";
-      menuPrice3.innerHTML = "$4.30";
-      menuPrice4.innerHTML = "$4.30";
-      menuPrice5.innerHTML = "$2.30";
-      menuPrice6.innerHTML = "$3.30";
+      menuPrice1.innerHTML = "5.30";
+      menuPrice2.innerHTML = "5.30";
+      menuPrice3.innerHTML = "4.30";
+      menuPrice4.innerHTML = "4.30";
+      menuPrice5.innerHTML = "2.30";
+      menuPrice6.innerHTML = "3.30";
     });
 
     menuDirection3.addEventListener("click", function () {
@@ -193,12 +193,12 @@ document.addEventListener(
       //   document.getElementById(`menu-price${i+1}`).innerHTML = `<p><span>$</span><span>${itemprice}</span></p>`
       // }
 
-      menuPrice1.innerHTML = "$3.50";
-      menuPrice2.innerHTML = "$3.50";
-      menuPrice3.innerHTML = "$3.50";
-      menuPrice4.innerHTML = "$3.50";
-      menuPrice5.innerHTML = "$3.50";
-      menuPrice6.innerHTML = "$2.50";
+      menuPrice1.innerHTML = "3.50";
+      menuPrice2.innerHTML = "3.50";
+      menuPrice3.innerHTML = "3.50";
+      menuPrice4.innerHTML = "3.50";
+      menuPrice5.innerHTML = "3.50";
+      menuPrice6.innerHTML = "2.50";
     });
 
     // const deleteBtn = document.getElementById("delete-btn")
@@ -223,7 +223,7 @@ $(".addCart").click(function (e) {
 
   const data = {
     title: $(e.target.parentElement).find(".menu-title").text(),
-    price: e.target.previousElementSibling.children[1].children[0].textContent,
+    price: $(e.target.parentElement).find(".price").text(),
     img: $(e.target.parentElement).find(".menu-img").attr("src"),
     quantity: 1,
   };
@@ -245,13 +245,22 @@ $(".addCart").click(function (e) {
         postListClone.querySelector(".cartPic").src = itemImg;
         postListClone.querySelector(".item-name").innerHTML = itemTitle;
         postListClone.querySelector(".item-quantity").innerHTML = itemQuantity;
-        postListClone.querySelector(".subtotalNum").textContent = subTotal;
+        postListClone.querySelector(".subtotalNum").textContent =
+          subTotal.toFixed(2);
         postListClone
           .querySelector("#delete-btn")
           .addEventListener("click", function () {
             const deleteItem = $(this).parent().parent();
             deleteItem.fadeOut(1000, function () {
               deleteItem.remove();
+              const index = titles.indexOf(exist);
+              titles.splice(index, 1);
+
+              increaseCircleNum();
+              if (titles.length === 0) {
+                document.querySelector(".emptyCart").classList.remove("hide");
+                document.querySelector(".quantityCircle").classList.add("hide");
+              }
             });
           });
 
@@ -303,6 +312,14 @@ $(".special-addCart").click(function (e) {
             const deleteItem = $(this).parent().parent();
             deleteItem.fadeOut(1000, function () {
               deleteItem.remove();
+              const index = titles.indexOf(exist);
+              titles.splice(index, 1);
+
+              increaseCircleNum();
+              if (titles.length === 0) {
+                document.querySelector(".emptyCart").classList.remove("hide");
+                increaseCircleNum();
+              }
             });
           });
 
