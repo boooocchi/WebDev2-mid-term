@@ -51,7 +51,7 @@ $(".fa-chevron-right").click(function () {
   }
 });
 
-const titles = [];
+let titles = [];
 
 //view cart or remove card window
 $(document).click(function (e) {
@@ -318,9 +318,15 @@ $(".special-addCart").click(function (e) {
     .catch((error) => console.log(error));
 });
 
-//hi
-
 // const clearAll = document.getElementsByClassName("clearAll");
-// clearAll.addEventListener('click', function(){
+// clearAll.addEventListener("click", function (){
 
-// })
+// });
+
+$(".clearAll").click(function (e) {
+  e.preventDefault();
+  $(e.target.parentElement).find(".list-items").html("");
+  titles = [];
+  document.querySelector(".emptyCart").classList.remove("hide");
+  document.querySelector(".quantityCircle").classList.add("hide");
+});
