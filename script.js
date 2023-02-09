@@ -249,12 +249,19 @@ $(".addCart").click(function (e) {
           subTotal.toFixed(2);
         postListClone
           .querySelector("#delete-btn")
-          .addEventListener("click", function () {
+          .addEventListener("click", function (e) {
             const deleteItem = $(this).parent().parent();
             deleteItem.fadeOut(1000, function () {
               deleteItem.remove();
-              const index = titles.indexOf(exist);
-              titles.splice(index, 1);
+              const newTitles = titles.filter(
+                (i) =>
+                  i.title.match(
+                    $(e.target.parentElement.parentElement)
+                      .find(".item-name")
+                      .text()
+                  ) == null
+              );
+              titles = newTitles;
 
               increaseCircleNum();
               if (titles.length === 0) {
@@ -312,13 +319,20 @@ $(".special-addCart").click(function (e) {
             const deleteItem = $(this).parent().parent();
             deleteItem.fadeOut(1000, function () {
               deleteItem.remove();
-              const index = titles.indexOf(exist);
-              titles.splice(index, 1);
+              const newTitles = titles.filter(
+                (i) =>
+                  i.title.match(
+                    $(e.target.parentElement).find(".deal-title").text()
+                  ) === null
+              );
+              titles = newTitles;
 
               increaseCircleNum();
               if (titles.length === 0) {
-                document.querySelector(".emptyCart").classList.remove("hide");
                 increaseCircleNum();
+
+                document.querySelector(".quantityCircle").classList.add("hide");
+                document.querySelector(".emptyCart").classList.remove("hide");
               }
             });
           });
