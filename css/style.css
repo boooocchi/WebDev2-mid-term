@@ -203,6 +203,9 @@ header .inside-cart .list-items .item-container .productPrice {
 header .inside-cart .list-items .item-container .subtotaltext {
   font-size: 0.8rem;
 }
+header .inside-cart .list-items .item-container .subtotalNum {
+  font-size: 0.8rem;
+}
 header .cart-title {
   font-family: "Big Shoulders Inline Text";
   font-size: 2rem;
