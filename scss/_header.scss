@@ -111,6 +111,10 @@ header {
         .item-delete {
           font-size: 1rem;
           align-items: center;
+
+          #delete-btn{
+            cursor: pointer;
+          }
         }
 
         .cartPic-container {
