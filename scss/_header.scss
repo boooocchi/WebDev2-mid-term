@@ -177,9 +177,15 @@ header {
     font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.399);
   }
+  .checkout-wrapper {
+    margin-top: auto;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
   .checkout {
-    margin-top: auto;
     background-color: var.$orangered;
     border: none;
     border-radius: 2rem;

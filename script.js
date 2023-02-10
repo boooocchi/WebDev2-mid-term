@@ -1,3 +1,16 @@
+let totals = [];
+let sum = 0;
+const totalUpdater = function (e, tagname) {
+  let eachitemPrice = $(e.target.parentElement).find(tagname).text();
+  // totals.push(eachitemPrice);
+  sum += parseFloat(eachitemPrice);
+  // let sum = 0;
+  // for (let i = 0; i < totals.length; i++) {
+  //   sum += parseFloat(totals[i]);
+  // }
+  $(".totalNum").text(sum.toFixed(2));
+  $(".total").removeClass("hide");
+};
 const postTemplate = document.querySelector("template");
 const increaseNumberInCart = function (exist, itemPrice) {
   exist.quantity = Number(exist.quantity) + 1;
@@ -6,11 +19,10 @@ const increaseNumberInCart = function (exist, itemPrice) {
     .querySelector(".list-items")
     .children[listIndex].querySelector(".item-quantity").textContent =
     exist.quantity;
+  let subtotal = (itemPrice * exist.quantity).toFixed(2);
   document
     .querySelector(".list-items")
-    .children[listIndex].querySelector(".subtotalNum").textContent = (
-    itemPrice * exist.quantity
-  ).toFixed(2);
+    .children[listIndex].querySelector(".subtotalNum").textContent = subtotal;
 };
 const increaseCircleNum = function () {
   let circleNum = 0;
@@ -227,6 +239,7 @@ $(".addCart").click(function (e) {
     img: $(e.target.parentElement).find(".menu-img").attr("src"),
     quantity: 1,
   };
+  totalUpdater(e, ".price");
 
   axios
     .post("https://run.mocky.io/v3/b2b2fbd3-f9fc-4932-bb6b-257dda4c5407", data)
@@ -269,6 +282,16 @@ $(".addCart").click(function (e) {
                 document.querySelector(".quantityCircle").classList.add("hide");
               }
             });
+
+            let numnum = $(e.target.parentElement.parentElement)
+              .find(".subtotalNum")
+              .text();
+
+            sum = sum - numnum;
+            $(".totalNum").text(sum.toFixed(2));
+            if (sum === 0) {
+              $(".total").addClass("hide");
+            }
           });
 
         document.querySelector(".list-items").append(postListClone);
@@ -294,6 +317,7 @@ $(".special-addCart").click(function (e) {
     img: $(e.target.parentElement).find(".right-pic>img").attr("src"),
     quantity: 1,
   };
+  totalUpdater(e, ".specialDeal-price");
 
   axios
     .post("https://run.mocky.io/v3/b2b2fbd3-f9fc-4932-bb6b-257dda4c5407", data)
@@ -315,14 +339,16 @@ $(".special-addCart").click(function (e) {
         postListClone.querySelector(".subtotalNum").textContent = subTotal;
         postListClone
           .querySelector("#delete-btn")
-          .addEventListener("click", function () {
+          .addEventListener("click", function (e) {
             const deleteItem = $(this).parent().parent();
             deleteItem.fadeOut(1000, function () {
               deleteItem.remove();
               const newTitles = titles.filter(
                 (i) =>
                   i.title.match(
-                    $(e.target.parentElement).find(".deal-title").text()
+                    $(e.target.parentElement.parentElement)
+                      .find(".item-name")
+                      .text()
                   ) === null
               );
               titles = newTitles;
@@ -333,8 +359,19 @@ $(".special-addCart").click(function (e) {
 
                 document.querySelector(".quantityCircle").classList.add("hide");
                 document.querySelector(".emptyCart").classList.remove("hide");
+                console.log(titles);
               }
             });
+
+            let numnum = $(e.target.parentElement.parentElement)
+              .find(".subtotalNum")
+              .text();
+            console.log(numnum);
+            sum = sum - numnum;
+            $(".totalNum").text(sum.toFixed(2));
+            if (sum === 0) {
+              $(".total").addClass("hide");
+            }
           });
 
         document.querySelector(".list-items").append(postListClone);
@@ -345,6 +382,18 @@ $(".special-addCart").click(function (e) {
 
       //the number of items in a cart
       increaseCircleNum();
+
+      // let totalArr = document.querySelector(".subtotalNum");
+
+      // totalArr.forEach((total) => {
+      //   totals.push(parseFloat(total.textContent));
+      // });
+      // console.log(totals);
+      // let sum = 0;
+      // for (let i = 0; i < totals.length; i++) {
+      //   sum += totals[i];
+      // }
+      // $(".totalNum").text(sum.toFixed(2));
     })
     .catch((error) => console.log(error));
 });
@@ -360,4 +409,6 @@ $(".clearAll").click(function (e) {
   titles = [];
   document.querySelector(".emptyCart").classList.remove("hide");
   document.querySelector(".quantityCircle").classList.add("hide");
+  sum = 0;
+  $(".total").addClass("hide");
 });

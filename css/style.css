@@ -212,8 +212,14 @@ header .emptyCart {
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.399);
 }
-header .checkout {
+header .checkout-wrapper {
   margin-top: auto;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header .checkout {
   background-color: #fb422e;
   border: none;
   border-radius: 2rem;
