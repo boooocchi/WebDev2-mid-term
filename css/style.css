@@ -154,6 +154,9 @@ header .inside-cart .list-items .item-container .item-delete {
   font-size: 1rem;
   align-items: center;
 }
+header .inside-cart .list-items .item-container .item-delete #delete-btn {
+  cursor: pointer;
+}
 header .inside-cart .list-items .item-container .cartPic-container {
   width: 35%;
 }
@@ -322,10 +325,12 @@ header .viewCart {
 }
 .menu-top .menu-direction1 {
   padding: 1rem 0;
+  cursor: pointer;
 }
 .menu-top .menu-direction {
   padding: 1rem 0;
   opacity: 0.5;
+  cursor: pointer;
 }
 .menu-top p {
   font-size: 0.65rem;
