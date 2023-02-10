@@ -152,6 +152,13 @@ header .inside-cart .list-items .item-container {
   gap: 1rem;
   margin: 1rem 0;
 }
+header .inside-cart .list-items .item-container .item-delete {
+  font-size: 1rem;
+  align-items: center;
+}
+header .inside-cart .list-items .item-container .item-delete #delete-btn {
+  cursor: pointer;
+}
 header .inside-cart .list-items .item-container .cartPic-container {
   width: 35%;
 }
@@ -198,6 +205,9 @@ header .inside-cart .list-items .item-container .productPrice {
 header .inside-cart .list-items .item-container .subtotaltext {
   font-size: 0.8rem;
 }
+header .inside-cart .list-items .item-container .subtotalNum {
+  font-size: 0.8rem;
+}
 header .cart-title {
   font-family: "Big Shoulders Inline Text";
   font-size: 2rem;
@@ -207,8 +217,14 @@ header .emptyCart {
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.399);
 }
-header .checkout {
+header .checkout-wrapper {
   margin-top: auto;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header .checkout {
   background-color: #fb422e;
   border: none;
   border-radius: 2rem;
@@ -311,9 +327,14 @@ header .viewCart {
   width: 3rem;
   height: 3rem;
 }
+.menu-top .menu-direction1 {
+  padding: 1rem 0;
+  cursor: pointer;
+}
 .menu-top .menu-direction {
   padding: 1rem 0;
   opacity: 0.5;
+  cursor: pointer;
 }
 .menu-top p {
   font-size: 0.65rem;
@@ -330,7 +351,6 @@ header .viewCart {
   row-gap: 4%;
   width: 45rem;
   height: auto;
-
   margin: 2.5rem auto;
 }
 .menu-botom .contents-top {
@@ -392,7 +412,6 @@ header .viewCart {
 
 .special-deal {
   margin: 7rem 0 2rem;
-
   overflow-x: hidden;
   position: relative;
 }
